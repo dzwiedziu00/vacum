@@ -1,6 +1,13 @@
 body {
-    background-color: ghostwhite;
+    background-color: var(--second-color);
 }
+
+:root {
+    --main-color: #002a54;
+    --second-color: #eaedf1;
+    --third-color: #e04b27;
+}
+
 @-webkit-keyframes moving {
     0% {
         transform: rotate(0deg);
@@ -19,17 +26,57 @@ body {
     }
 }
 
+@-webkit-keyframes text-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 #title {
-    background-color: gray;
+    background-color: var(--third-color);
     font-size: 30px;
     text-align: center;
     padding: 10px;
-    margin: 15vh auto 0 auto;
+    margin: 5vh auto 0 auto;
     width: 75vh;
     border-radius: 25px;
-    border-color: black;
+    border-color: var(--second-color);
     color: white;
+}
 
+.git {
+    max-height: 14px;
+}
+
+.model {
+    margin-top: 46px;
+    text-align: center;
+    background: var(--main-color);
+    color: var(--second-color);
+    padding-bottom: 16px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+div.model p {
+    animation: text-animation 4s infinite;
+    font-size: 18px;
+}
+
+div.model img{
+    border-radius: 4px;
+    padding: 5px;
+    width: 70px;
+    height: 40px;
 }
 
 #content {
@@ -38,17 +85,16 @@ body {
     padding: 40px 0;
 }
 
-img {
+.custom-img {
     display: inline-block;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
     width: 370px;
     height: 300px;
-    transition: 0.3s;
 }
 
-img:hover {
+.custom-img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
     animation: moving 1s;
 }
@@ -58,7 +104,7 @@ ul.topnav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: var(--main-color);
     position: fixed;
     top: 0;
     left: 0;
@@ -72,16 +118,16 @@ ul.topnav li {
 
 ul.topnav li a {
     display: block;
-    color: white;
+    color: var(--second-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 ul.topnav li a:hover {
-    background-color: grey;
+    background-color: coral;
 }
 
 ul.topnav li a.active {
-    background-color: black;
+    background-color: var(--third-color);
 }
